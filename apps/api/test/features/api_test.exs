@@ -1,6 +1,6 @@
 Code.require_file "../../test_helper.exs", __FILE__
 
-defmodule WebTest do
+defmodule ApiTest do
   use Api.TestCase
   use Dynamo.HTTP.Case
 
