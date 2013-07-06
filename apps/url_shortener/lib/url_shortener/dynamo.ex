@@ -13,7 +13,7 @@ defmodule UrlShortener.Dynamo do
 
     # The route from where static assets are served
     # You can turn off static assets by setting it to false
-    static_route: "/static"
+    static_route: false
 
   # Uncomment the lines below to enable the cookie session store
   # config :dynamo,
@@ -23,7 +23,7 @@ defmodule UrlShortener.Dynamo do
   #       secret: "WK4dlCyGOPDoFhKGhvMD/U7pRVDLMppCRguk2ld1shgsM0tcTCiNmnVD6/DjaAWw"]
 
   # Default functionality available in templates
-  templates do
-    use Dynamo.Helpers
-  end
+  # templates do
+  #   use Dynamo.Helpers
+  # end
 end
