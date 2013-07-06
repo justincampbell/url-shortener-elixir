@@ -1,4 +1,4 @@
-defmodule UrlShortener.Dynamo do
+defmodule Api.Dynamo do
   use Dynamo
 
   config :dynamo,
@@ -6,7 +6,7 @@ defmodule UrlShortener.Dynamo do
     env: Mix.env,
 
     # The OTP application associated to this Dynamo
-    otp_app: :url_shortener,
+    otp_app: :api,
 
     # The endpoint to dispatch requests to
     endpoint: ApplicationRouter,
@@ -19,7 +19,7 @@ defmodule UrlShortener.Dynamo do
   # config :dynamo,
   #   session_store: Session.CookieStore,
   #   session_options:
-  #     [ key: "_url_shortener_session",
+  #     [ key: "_api_session",
   #       secret: "WK4dlCyGOPDoFhKGhvMD/U7pRVDLMppCRguk2ld1shgsM0tcTCiNmnVD6/DjaAWw"]
 
   # Default functionality available in templates

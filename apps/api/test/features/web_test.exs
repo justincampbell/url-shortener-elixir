@@ -1,7 +1,7 @@
 Code.require_file "../../test_helper.exs", __FILE__
 
 defmodule WebTest do
-  use UrlShortener.TestCase
+  use Api.TestCase
   use Dynamo.HTTP.Case
 
   test "root redirects to documentation" do

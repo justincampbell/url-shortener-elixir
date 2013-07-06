@@ -1,4 +1,4 @@
-defmodule UrlShortener do
+defmodule Api do
   use Application.Behaviour
 
   @doc """
@@ -6,6 +6,6 @@ defmodule UrlShortener do
   application and its Dynamos.
   """
   def start(_type, _args) do
-    UrlShortener.Dynamo.start_link([max_restarts: 5, max_seconds: 5])
+    Api.Dynamo.start_link([max_restarts: 5, max_seconds: 5])
   end
 end

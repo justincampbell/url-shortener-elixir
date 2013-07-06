@@ -1,20 +1,20 @@
-defmodule UrlShortener.Mixfile do
+defmodule Api.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :url_shortener,
+    [ app: :api,
       version: "0.0.1",
-      dynamos: [UrlShortener.Dynamo],
+      dynamos: [Api.Dynamo],
       compilers: [:elixir, :dynamo, :app],
       env: [prod: [compile_path: "ebin"]],
-      compile_path: "tmp/#{Mix.env}/url_shortener/ebin",
+      compile_path: "tmp/#{Mix.env}/api/ebin",
       deps: deps ]
   end
 
   # Configuration for the OTP application
   def application do
     [ applications: [:cowboy, :dynamo],
-      mod: { UrlShortener, [] } ]
+      mod: { Api, [] } ]
   end
 
   defp deps do

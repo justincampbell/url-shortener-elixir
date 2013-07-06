@@ -1,8 +1,8 @@
-Dynamo.under_test(UrlShortener.Dynamo)
+Dynamo.under_test(Api.Dynamo)
 Dynamo.Loader.enable
 ExUnit.start
 
-defmodule UrlShortener.TestCase do
+defmodule Api.TestCase do
   use ExUnit.CaseTemplate
 
   # Enable code reloading on test cases
