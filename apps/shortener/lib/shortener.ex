@@ -1,4 +1,4 @@
-defmodule UrlShortener.Shortener do
+defmodule Shortener do
   use GenServer.Behaviour
 
   defrecord State, id: 0, urls: HashDict.new

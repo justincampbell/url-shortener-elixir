@@ -1,9 +1,8 @@
-Code.require_file "../../test_helper.exs", __FILE__
+Code.require_file "../test_helper.exs", __FILE__
 
 defmodule ShortenerTest do
-  use UrlShortener.TestCase
+  use ExUnit.Case, async: true
 
-  alias UrlShortener.Shortener
   doctest Shortener
 
   @url "http://example.com"
