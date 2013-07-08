@@ -25,12 +25,18 @@ defmodule ApiTest do
     assert Shortener.Core.expand(token) == @url
   end
 
-  test "expanding a url" do
+  test "redirecting with a token" do
     token = Shortener.Core.shorten(@url)
 
     conn = get("/#{token}")
 
     assert conn.status == 302
     assert conn.resp_headers["location"] == @url
+  end
+
+  test "redirecting with a nonexistent token" do
+    conn = get("/herpderp")
+
+    assert conn.status == 404
   end
 end

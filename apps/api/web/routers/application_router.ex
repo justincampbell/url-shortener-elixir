@@ -16,6 +16,11 @@ defmodule ApplicationRouter do
 
   get "/:token" do
     url = Shortener.Core.expand(conn.params[:token])
-    redirect conn, to: url
+
+    if url do
+      redirect conn, to: url
+    else
+      conn.send 404, "Not found"
+    end
   end
 end
