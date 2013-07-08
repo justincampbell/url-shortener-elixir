@@ -10,7 +10,7 @@ defmodule Shortener.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    [ applications: [:shortener],
+    [ applications: [],
       mod: { Shortener, [] } ]
   end
 
