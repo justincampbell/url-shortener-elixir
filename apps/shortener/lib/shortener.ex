@@ -7,6 +7,10 @@ defmodule Shortener do
     {:ok, State.new}
   end
 
+  def start_link(env) do
+    :gen_server.start_link({ :local, __MODULE__ }, __MODULE__, env, [])
+  end
+
   def handle_call({ :shorten, url }, from, state) do
     {state, token} = shorten(state, url)
     {:reply, token, state}
@@ -21,7 +25,15 @@ defmodule Shortener do
     super(request, from, state)
   end
 
-  def shorten(state, url) do
+  def shorten(url) do
+    :gen_server.call(__MODULE__, { :shorten, url })
+  end
+
+  def expand(token) do
+    :gen_server.call(__MODULE__, { :expand, token })
+  end
+
+  defp shorten(state, url) do
     id = state.id + 1
     token = tokenize(id)
     urls = Dict.put(state.urls, token, url)
@@ -30,7 +42,7 @@ defmodule Shortener do
     {state, token}
   end
 
-  def expand(state, token) do
+  defp expand(state, token) do
     state.urls[token]
   end
 
