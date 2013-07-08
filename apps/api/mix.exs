@@ -19,7 +19,6 @@ defmodule Api.Mixfile do
 
   defp deps do
     [ { :cowboy, %r(.*), github: "extend/cowboy" },
-      { :dynamo, "0.1.0.dev", github: "elixir-lang/dynamo" },
-      { :shortener, path: "../shortener" } ]
+      { :dynamo, "0.1.0.dev", github: "elixir-lang/dynamo" } ]
   end
 end
