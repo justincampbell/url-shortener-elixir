@@ -13,12 +13,13 @@ defmodule Api.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    [ applications: [:cowboy, :dynamo, :shortener],
+    [ applications: [:cowboy, :dynamo],
       mod: { Api, [] } ]
   end
 
   defp deps do
     [ { :cowboy, %r(.*), github: "extend/cowboy" },
-      { :dynamo, "0.1.0.dev", github: "elixir-lang/dynamo" } ]
+      { :dynamo, "0.1.0.dev", github: "elixir-lang/dynamo" },
+      { :shortener, path: "../shortener" } ]
   end
 end
