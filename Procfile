@@ -1,1 +1,1 @@
-web: MIX_ENV=prod mix server -p $PORT
+web: mix server -p $PORT
