@@ -3,7 +3,7 @@ defmodule Shortener.Core do
 
   defrecord State, id: 0, urls: HashDict.new
 
-  def init(args) do
+  def init(_args) do
     {:ok, State.new}
   end
 
@@ -11,12 +11,12 @@ defmodule Shortener.Core do
     :gen_server.start_link({ :local, __MODULE__ }, __MODULE__, env, [])
   end
 
-  def handle_call({ :shorten, url }, from, state) do
+  def handle_call({ :shorten, url }, _from, state) do
     {state, token} = shorten(state, url)
     {:reply, token, state}
   end
 
-  def handle_call({ :expand, token }, from, state) do
+  def handle_call({ :expand, token }, _from, state) do
     url = expand(state, token)
     {:reply, url, state}
   end
